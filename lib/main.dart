@@ -14,8 +14,141 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LayoutBuilderRoute(),
+      home: HomePage(),
       debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('首页'),
+      ),
+      body: ListView(
+        padding: EdgeInsets.all(8),
+        children: [
+          ListTile(
+            title: Text('SizedBoxTest'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SizedBoxTest(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('RowColumnTest'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const RowColumnTest(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('SpecialTest'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SpecialTest(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('SpecialTest02'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SpecialTest02(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('FlexTest'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const FlexTest(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('WrapTest'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const WrapTest(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('FlowTest'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const FlowTest(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('StackTest'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const StackTest(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('StackTest2'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const StackTest2(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('AlignTest'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AlignTest(),
+                ),
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }
@@ -175,14 +308,14 @@ class _RowColumnTestState extends State<RowColumnTest> {
   }
 }
 
-class Test02 extends StatefulWidget {
-  const Test02({Key? key}) : super(key: key);
+class SpecialTest extends StatefulWidget {
+  const SpecialTest({Key? key}) : super(key: key);
 
   @override
-  State<Test02> createState() => _Test02State();
+  State<SpecialTest> createState() => _SpecialTestState();
 }
 
-class _Test02State extends State<Test02> {
+class _SpecialTestState extends State<SpecialTest> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -215,14 +348,14 @@ class _Test02State extends State<Test02> {
   }
 }
 
-class Test03 extends StatefulWidget {
-  const Test03({Key? key}) : super(key: key);
+class SpecialTest02 extends StatefulWidget {
+  const SpecialTest02({Key? key}) : super(key: key);
 
   @override
-  State<Test03> createState() => _Test03State();
+  State<SpecialTest02> createState() => _SpecialTest02State();
 }
 
-class _Test03State extends State<Test03> {
+class _SpecialTest02State extends State<SpecialTest02> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -686,7 +819,7 @@ class LayoutBuilderRoute extends StatelessWidget {
         // 限制宽度为190，小于 200
         SizedBox(width: 190, child: ResponsiveColumn(children: _children)),
         ResponsiveColumn(children: _children),
-        LayoutLogPrint(child:Text("xx")) // 下面介绍
+        LayoutLogPrint(child: Text("xx")) // 下面介绍
       ],
     );
   }
